@@ -6,4 +6,6 @@ This project is using the [RSKCollectionViewRetractableFirstItemLayout](https://
 
 A lot of the flags are coming from [flaticon.com](https://www.flaticon.com/packs/countrys-flags/2) and others are coming from me.
 
+The earth flat was taken from [OSKAR PERNEFELDT](http://www.flagofplanetearth.com/) creation!
+
 Hope you enjoy!
