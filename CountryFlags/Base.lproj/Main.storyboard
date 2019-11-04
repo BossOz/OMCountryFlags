@@ -1,24 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CountryFlags" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GS0-gN-6na">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewLayout key="collectionViewLayout" id="cAH-vn-GCH" customClass="RSKCollectionViewRetractableFirstItemLayout" customModule="CountryFlags" customModuleProvider="target"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Flag" id="1uL-ML-aEz" customClass="FlagCollectionViewCell" customModule="CountryFlags" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="87" height="111"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="XZ7-8G-z40">
+                                            <rect key="frame" x="0.0" y="0.0" width="87" height="111"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tcM-LO-VXF">
+                                                    <rect key="frame" x="3" y="3" width="81" height="84"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugn-RW-0Ma">
+                                                    <rect key="frame" x="0.0" y="90" width="87" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="uCZ-6F-dQN"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="ugn-RW-0Ma" secondAttribute="bottom" id="C2I-zK-46y"/>
+                                                <constraint firstItem="tcM-LO-VXF" firstAttribute="centerX" secondItem="XZ7-8G-z40" secondAttribute="centerX" id="FGs-Ei-GA2"/>
+                                                <constraint firstAttribute="trailing" secondItem="tcM-LO-VXF" secondAttribute="trailing" constant="3" id="Hme-8B-cfe"/>
+                                                <constraint firstItem="ugn-RW-0Ma" firstAttribute="top" secondItem="tcM-LO-VXF" secondAttribute="bottom" constant="3" id="MHa-5j-Qag"/>
+                                                <constraint firstItem="tcM-LO-VXF" firstAttribute="top" secondItem="XZ7-8G-z40" secondAttribute="top" constant="3" id="WYs-Jn-zyj"/>
+                                                <constraint firstAttribute="trailing" secondItem="ugn-RW-0Ma" secondAttribute="trailing" id="XYu-NT-sOP"/>
+                                                <constraint firstItem="ugn-RW-0Ma" firstAttribute="leading" secondItem="XZ7-8G-z40" secondAttribute="leading" id="kAV-ru-ruY"/>
+                                                <constraint firstItem="tcM-LO-VXF" firstAttribute="leading" secondItem="XZ7-8G-z40" secondAttribute="leading" constant="3" id="kq4-6z-RIZ"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="87" height="111"/>
+                                        <connections>
+                                            <outlet property="countryNameLabel" destination="ugn-RW-0Ma" id="Ppw-uF-MtV"/>
+                                            <outlet property="flagImageView" destination="tcM-LO-VXF" id="tRD-Ow-xPx"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="GS0-gN-6na" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7AV-D5-30t"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GS0-gN-6na" secondAttribute="bottom" id="HSB-d8-kF7"/>
+                            <constraint firstItem="GS0-gN-6na" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="LeM-FO-eOm"/>
+                            <constraint firstItem="GS0-gN-6na" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XKt-X9-s60"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="flagsCollectionView" destination="GS0-gN-6na" id="tTX-OD-wNg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-57.971014492753625" y="138.61607142857142"/>
         </scene>
     </scenes>
 </document>
