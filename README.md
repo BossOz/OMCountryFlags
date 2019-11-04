@@ -1,4 +1,5 @@
-# OMCountryFlags
+## OMCountryFlags [![Swift 5.0](https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
+
 All the countries flags managed via NSLocale.
 
 This project is using the [RSKCollectionViewRetractableFirstItemLayout](https://github.com/ruslanskorb/RSKCollectionViewRetractableFirstItemLayout) by [@ruslanskorb](https://github.com/ruslanskorb)
